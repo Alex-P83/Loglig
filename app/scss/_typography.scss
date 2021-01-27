@@ -1,0 +1,38 @@
+h2{
+    font-size: 4rem;
+    font-weight: 700;
+    &.regular{
+        font-weight: 400;
+    }
+}
+h3{
+    font-size: 3rem;
+    font-weight: 700; 
+    &.regular{
+        font-weight: 400;
+    }   
+}
+h4{
+    font-size: 2rem;
+    font-weight: 700;
+    &.regular{
+        font-weight: 400;
+    }    
+}
+h5{
+    font-size: 1.4rem;
+    font-weight: 700;
+    &.regular{
+        font-weight: 400;
+    }
+}
+p{
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+@include respond(es-screen){
+    h2{
+        font-size: 2rem;
+    } 
+}
