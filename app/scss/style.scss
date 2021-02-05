@@ -2,8 +2,30 @@
 @import "mixins";
 @import "libs";
 @import "common";
-// @import "typography";
+@import "fonts";
+@import "typography";
 // @import "buttons";
 // @import "select";
 // @import "form";
 // @import "slider";
+
+html {
+    height: 100%;
+    // This defines what 1rem is
+    font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+}
+
+body{
+    height: 100%;
+    font-family: 'Rubik', 'Roboto', arial;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    font-weight: 400; 
+    letter-spacing: 0.02em;   
+}
+
+@include respond(s-screen){
+    .container{
+        max-width: 100%;
+    }
+}
