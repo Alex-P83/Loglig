@@ -4,7 +4,7 @@ header{
     background: $white;
     .header_wrapper{
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         justify-content: space-between;
         .menu{
             padding: 0;
@@ -29,7 +29,13 @@ header{
             li{
                 list-style: none;
                 padding-left: 1rem;
+                &:first-child{
+                    padding-left: 0;
+                }
             }
+        }
+        .colapse-menu-button{
+            display: none;
         }        
     }
 }
@@ -39,6 +45,9 @@ header{
     background-size: cover;
     padding-top: 19rem;
     padding-bottom: 5rem;
+    .container{
+        max-width: 157rem;
+    }
     .content{
         max-width: 83rem;
         h1{
@@ -101,6 +110,17 @@ header{
                           &:-ms-input-placeholder {
                             color: $abbey;
                           }                        
+                    }
+                    a{
+                        display: inline-block;
+                        color:$blue;
+                        font-size: 1.4rem;
+                        margin-top: 1rem;
+                        text-decoration: none;
+                        transition: 0.3s;
+                        &:hover{
+                            color:lighten($blue, 10%);
+                        }
                     }                    
                 }
             }
@@ -112,6 +132,7 @@ header{
                 display: flex;
                 align-items: center;
                 padding: 0;
+                transition: 0.3s;
                 span{
                     &.text{
                         display: flex;
@@ -129,10 +150,16 @@ header{
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        transition: 0.3s;
                     }
                 }
                 &:hover{
-
+                    background: darken($scorpion, 10%);
+                    span{
+                        &.arrow{
+                            background: darken($orange,10%);
+                        }
+                    }
                 }
             }
         }
@@ -184,8 +211,10 @@ header{
             display: flex;
             align-items: flex-start;
             justify-content: center;
+            margin-bottom: 4rem;
         }
-        h4{
+        h3{
+            font-size: 3.2rem;
             color:$coral;
             margin-bottom: 4rem;
         }
@@ -281,23 +310,267 @@ header{
     }
 }
 
-
 .sliders{
-    padding-top: 15rem;
     .container{
         max-width: 153rem;
         h2{
             font-size: 5.2rem;
             color:$orange;
             text-align: center;
-            margin-bottom: 6rem;
+            margin: 15rem 0 10rem;
+        }
+        .federations_slider{
+            padding: 0 5rem;
+            margin:4rem 0;
+            .owl-stage-outer{
+                .owl-stage{
+                    display: flex;
+                    align-items: center;
+                    .owl-item{
+                        float: none;
+                        padding: 0 4rem;
+                    }
+                }
+            }
+            .owl-nav{
+                display: block;
+                button{
+                    position: absolute;
+                    top:50%;
+                    font-size: 0;
+                    outline: none;
+                    &.owl-prev{
+                        left:-5rem;
+                        &:before{
+                            content:url('../images/arrow_prev.png');
+                        }
+                    }
+                    &.owl-next{
+                        right:-5rem;
+                        &:before{
+                            content:url('../images/arrow_next.png');
+                        }
+                    }                    
+                }
+            }
         }
     }
 }
 
 footer{
     background: $black;
-    .footer_botton{
+    padding-top: 8rem;
+    .container{
+        max-width: 163rem;
+        .footer_top{
+            display: flex;
+            .left_block{
+                width: 39%;
+                padding-right: 10rem;
+                .content{
+                    display: flex;
+                    .text{
+                        padding-right: 9rem;
+                        p{
+                            margin: 0;
+                            color:$white;
+                            font-weight: 700;
+                        }
+                    }
+                    .wrap_block{
+                        text-align: center;
+                        .phone{
+                            font-size: 2.6rem;
+                            white-space: nowrap;
+                            color:$white;
+                            margin-top: 5rem;
+                            a{
+                                transition: 0.3s;
+                                &:hover{
+                                    text-decoration: none;
+                                    opacity: 0.8;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .right_block{
+                width: 61%;
+                .contact{
+                    display: flex;
+                    .contact_us{
+                        padding-right: 13rem;
+                        h2{
+                            font-size: 5.2rem;
+                            color:$orange;
+                            margin-bottom: 1rem;
+                        }
+                        p{
+                            font-size: 2.4rem;
+                            font-weight: 700;
+                            color:$white;
+                            margin: 0;
+                        }
+                    }
+                    form{
+                        width: 100%;
+                        max-width: 55rem;
+                        flex-grow: 1;
+                        flex-shrink: 0;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        input{
+                            width: calc(50% - 20px);
+                            height: 3rem;
+                            font-size: 1.8rem;
+                            font-weight: 300;
+                            color:$orange;
+                            background: none;
+                            border: none;
+                            border-bottom: 2px solid $abbey;
+                            outline: none;
+                            &::-webkit-input-placeholder {
+                                color: $orange;
+                            }
+                            
+                            &::-moz-placeholder {
+                                color: $orange;
+                            }
+                            
+                            /* Firefox 19+ */
+                            &:-moz-placeholder {
+                                color: $orange;
+                            }
+                            
+                            /* Firefox 18- */
+                            &:-ms-input-placeholder {
+                                color: $orange;
+                            }  
+                        }
+                        textarea{
+                            width: 100%;
+                            min-height: 9rem;
+                            font-size: 1.8rem;
+                            font-weight: 300;
+                            color:$orange;
+                            background: none;
+                            border: none;
+                            border-bottom: 2px solid $abbey;
+                            margin-top: 4rem!important;
+                            margin-bottom: 3rem!important;
+                            outline: none;
+                            &::-webkit-input-placeholder {
+                                color: $orange;
+                            }
+                            
+                            &::-moz-placeholder {
+                                color: $orange;
+                            }
+                            
+                            /* Firefox 19+ */
+                            &:-moz-placeholder {
+                                color: $orange;
+                            }
+                            
+                            /* Firefox 18- */
+                            &:-ms-input-placeholder {
+                                color: $orange;
+                            }                     
+                        }
+                        button{
+                            position: relative;
+                            width: 19rem;
+                            height: 5rem;
+                            background: $orange;
+                            border:none;
+                            padding: 0 4rem;
+                            font-size: 1.9rem;
+                            font-weight: 700;
+                            color:$white;
+                            outline: none;
+                            transition: 0.3s;
+                            margin-left: auto;
+                            img{
+                                position: absolute;
+                                top:50%;
+                                right:1.7rem;
+                                transform: translateY(-50%);
+                            }
+                            &:hover{
+                                background: darken($orange, 10%);
+                            }
+                        }
+                    }
+                }                
+            }
+        }
+
+    }
+    .footer_bottom{
         background: $white;
+        margin-top: 4rem;
+        .container{
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-end;
+            a{
+                display: inline-block;
+                &.politics{
+                    font-size: 2rem;
+                    font-weight: 300;
+                    color:$black;
+                    padding: 2rem 0 3rem;
+                    text-decoration: none;
+                    margin-left: 3rem;
+                    transition: 0.3s;
+                    &:hover{
+                        color: lighten($black, 30%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include respond(lg-screen){
+    header{
+        .header_wrapper{
+            .menu{
+                li{
+                    padding: 0 0.7rem;
+                }
+            }
+        }
+    }
+}
+
+@include respond(m-screen){
+    header{
+        .header_wrapper{
+            flex-wrap: wrap;
+            .menu{
+                margin-top: 2rem;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                flex-grow: 1;
+                order: 3;
+                li{
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
+
+@include respond(s-screen){
+    header{
+        .header_wrapper{
+            .colapse-menu-button{
+                display: block;
+            }
+        }
     }
 }
